@@ -1,0 +1,47 @@
+{
+    "manifest_version": 3,
+    "name": "Nopelist - Site Blocker",
+    "version": "2.0.0",
+    "description": "Block distractions and stay focused with Nopelist. Add a shedule. lock yourself in see how often you slip. Private, no account. ",
+    "author": "Gaurab Pantha",
+    "homepage_url": "https://gaurabdev.com",
+    "minimum_chrome_version": "120",
+    "icons": {
+        "16": "icons/icon16.png",
+        "32": "icons/icon32.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    },
+    "action": {
+        "default_title": "Nopelist - Site Blocker",
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icons/icon16.png",
+            "32": "icons/icon32.png"
+        }
+    },
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
+    },
+    "options_ui": {
+        "page": "options.html",
+        "open_in_tab": true
+    },
+    "commands": {
+        "toggle-blocking": {
+            "suggested_key": {
+                "default": "Alt+Shift+B"
+            },
+            "description": "Turn blocking on or off"
+        }
+    },
+    "permissions": ["storage", "alarms", "declarativeNetRequest", "contextMenus"],
+    "host_permissions": ["<all_urls>"],
+    "web_accessible_resources": [
+        {
+            "resources": ["blocked.html"],
+            "matches": ["<all_urls>"]
+        }
+    ]
+}

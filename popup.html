@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nopelist</title>
+  <script src="theme.js"></script>
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <div class="brand"><span id="logo"></span>site<b>blocker</b></div>
+    <div class="hright">
+      <a class="by" href="https://gaurabdev.com" target="_blank" rel="noopener">by Gaurab ↗</a>
+      <button id="themeBtn" class="themebtn" title="switch light / dark" aria-label="switch light or dark theme">
+      <svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+    </button>
+    </div>
+  </header>
+
+  <button id="power" class="hero on" aria-label="turn blocking on or off">
+    <span id="state" class="state">on</span>
+    <span class="meta">
+      <b id="heroCount">0 sites</b>
+      <i id="heroSub"></i>
+    </span>
+  </button>
+
+  <section class="add">
+    <div class="addrow">
+      <input id="url" type="text" placeholder="paste a link or a site" spellcheck="false" autocomplete="off">
+      <button id="addBtn" class="primary">block</button>
+    </div>
+    <p id="err" class="err" hidden></p>
+    <p id="hint" class="hint" hidden>
+      <span id="hintText"></span>
+      <button id="hintBtn" class="chip"></button>
+    </p>
+    <div id="quick" class="quick" hidden>
+      <button id="blockSite" class="chip"></button>
+      <button id="blockPage" class="chip" hidden>just this page</button>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec">
+      <h2 class="squig">your list</h2>
+      <span id="count" class="muted"></span>
+    </div>
+    <ul id="list"></ul>
+    <div id="empty" hidden>
+      <p class="muted">empty. tap a few to start:</p>
+      <div id="chips" class="chips"></div>
+    </div>
+  </section>
+
+  <section id="tools" class="tools">
+    <div id="pauseRow" class="toolrow">
+      <span class="muted">pause</span>
+      <div class="opts" id="pauseBtns">
+        <button data-min="5" class="chip">5m</button>
+        <button data-min="15" class="chip">15m</button>
+        <button data-min="60" class="chip">1h</button>
+      </div>
+      <button id="resumeBtn" class="chip" hidden>resume now</button>
+    </div>
+
+    <div id="lockRow" class="toolrow">
+      <span class="muted">lock me in</span>
+      <div class="opts" id="lockBtns">
+        <button data-min="30" class="chip">30m</button>
+        <button data-min="60" class="chip">1h</button>
+        <button data-min="120" class="chip">2h</button>
+        <button data-min="240" class="chip">4h</button>
+      </div>
+    </div>
+    <div id="lockSure" class="sure" hidden>
+      <p><b id="lockLen"></b> with no way out: no turning off, no pause, no removing sites. sure?</p>
+      <div class="opts">
+        <button id="lockYes" class="primary chip">lock me in</button>
+        <button id="lockNo" class="chip">nah</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <a href="#" id="optBtn">settings</a>
+    <span class="muted">· Designed with curiosity</span>
+  </footer>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
