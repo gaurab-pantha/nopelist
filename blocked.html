@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1">
+        <title>blocked | NopeList</title>
+        <script src="theme.js"></script>
+        <link rel="stylesheet" href="base.css">
+        <link rel="stylesheet" href="blocked.css">
+    </head>
+
+    <body>
+        <main>
+            <div class="top">
+                <span id="site" class="sticker">that site</span>
+                <span id="lockTag" class="locktag" hidden></span>
+            </div>
+
+            <h1 id="msg" class="squig">nope.</h1>
+            <p id="sub" class="sub"></p>
+
+            <div class="tallyrow">
+                <span id="tallyBox"></span>
+                <span id="today" class="muted"></span>
+            </div>
+
+            <div class="btns">
+                <button id="backBtn" class="primary">ok, going back</button>
+                <button id="pauseBtn">i really need it</button>
+                <button id="openBtn" class="primary" hidden>open the site</button>
+            </div>
+
+            <p id="wait" class="wait" hidden></p>
+        </main>
+
+        <footer>
+            <div class="brand"><span id="logo"></span>site<b>blocker</b></div>
+            <span class="muted">made by <a href="https://gaurabdev.com" target="_blank" rel="noopener">Gaurab ↗</a></span>
+        </footer>
+
+        <script type="module" src="blocked.js"></script>
+    </body>
+</html>
