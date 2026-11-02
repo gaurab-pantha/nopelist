@@ -135,7 +135,7 @@ $('exportBtn').addEventListener('click', () => {
   const blob = new Blob([st.blocklist.join('\n') + '\n'], { type: 'text/plain' });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  a.download = 'site-blocker-list.txt';
+  a.download = 'nopelist-list.txt';
   a.click();
   setTimeout(() => URL.revokeObjectURL(a.href), 1000);
 });
