@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>NopeList</title>
+        <script src="theme.js"></script>
+        <link rel="stylesheet" href="base.css">
+        <link rel="stlyesheet" href="options.css">
+    </head>
+
+    <body>
+        <main>
+            <header>
+                <div class="brand big"><span id="logo">site<b>blocker</b></span></div>
+                <div class="hright">
+                    <span id="saved" class="saved" aria-live="polite"></span>
+                    <button id="themeBtn" class="themeBtn" title="switch light / dark" aria-label="switch light or dark theme">
+                        <svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+                    </button>
+                </div>
+            </header>
+
+            <p id="lockNote" class="lockNote" hidden></p>
+
+            <section>
+      <h2 class="squig">add a bunch of sites</h2>
+      <p class="muted">paste links or sites, one per line or separated by commas. full links work too.</p>
+      <textarea id="bulk" rows="5" placeholder="youtube.com&#10;instagram.com&#10;reddit.com/r/memes&#10;localhost"></textarea>
+      <div class="row">
+        <button id="bulkBtn" class="primary">add all</button>
+        <span id="bulkMsg" class="muted"></span>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="squig">schedule</h2>
+      <label class="check"><input id="schedOn" type="checkbox"> only block at certain times</label>
+      <div id="schedBox" class="schedbox">
+        <div id="days" class="days"></div>
+        <div class="row">
+          <label>from <input id="from" type="time"></label>
+          <label>to <input id="to" type="time"></label>
+        </div>
+        <p class="muted small">uses your computer's clock. a window like 22:00 to 06:00 works too. outside it, blocking rests.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="squig">block page message</h2>
+      <input id="message" type="text" maxlength="80" placeholder="leave empty for random lines like &quot;go touch grass.&quot;">
+    </section>
+
+    <section>
+      <h2 class="squig">your last 7 days</h2>
+      <p id="weekInfo" class="muted"></p>
+      <div id="week" class="week"></div>
+      <div id="top" class="top5"></div>
+    </section>
+
+    <section>
+      <h2 class="squig">your list</h2>
+      <p id="listInfo" class="muted"></p>
+      <div class="row">
+        <button id="exportBtn">export list</button>
+        <button id="resetCounts">reset counters</button>
+        <button id="clearList" class="danger">remove everything</button>
+      </div>
+    </section>
+
+    <section>
+        <h2 class="squig">good to know</h2>
+        <ul class="tips">
+            <li>a site always includes its subdomains. blocking <code>google.com</code> also blocks <code>mail.google.com</code>.</li>
+            <li><code>youtube.com/shorts</code> blocks just that part of the site.</li>
+            <li><b>lock me in</b> (in the popup) can't be undone until the timer ends. use it before exams.</li>
+            <li>shortcut: <code>Alt+Shift+B</code> turns blocking on or off. change it at <code>chrome://extensions/shortcuts</code>.</li>
+            <li>right click any page or link, then "Block this site".</li>
+            <li>sites that change pages without reloading (like YouTube) show the block page on the next reload or new tab.</li>
+            <li>for incognito: <code>chrome://extensions</code>, Details on Site Blocker, then "Allow in Incognito".</li>
+            <li>everything stays on this computer. nothing is sent anywhere.</li> 
+
+        </ul>
+    </section>
+
+    <section class="about">
+        <div class="aboutTop">
+            <span class="wordmark">GAURABDEV</span>
+            <span class="sticker">student · designer · builder</span>
+        </div>
+
+        <p class="hi">hey, i'm gaurab.</p>
+        <p>i'm a student, designer and developer from nepal. i like graphic design, the web, robotics and building browser extentions. i've been part of the Shanti Science ICT &amp; Robotics Club for about three years, and i use Hack Club to learn by building</p>
+        <p class="quote">"Still learning, still building."</p>
+        <div class="row links">
+          <a class="btn primary" href="https://gaurabdev.com" target="_blank" rel="noopener">my portfolio ↗</a>
+          <a class="btn" href="https://github.com/gaurab-pantha" target="_blank" rel="noopener">github ↗</a>
+          <a class="btn" href="https://shantisirc.com" target="_blank" rel="noopener">SSIRC ↗</a>
+        </div>
+    </section>
+
+    <footer class="muted">NopeList · Designed with curiosity. Built through learning. </footer>
+        </main>
+
+        <script type="module" src="options.js"></script>
+    </body>
+</html>
